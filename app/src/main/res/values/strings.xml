@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Bill Please</string>
+    <string name="Store">Furry Paw Cafe</string>
+    <string name="Table">Table 18</string>
+    <string name="Location">1201 Eighth Avenue S231201</string>
+    <string name="Contact">+65 87234756</string>
+    <string name="Amt">Amount:</string>
+    <string name="Pax">Num of Pax:</string>
+    <string name="SCenabled">SVS</string>
+    <string name="SCdisabled">NO SVS</string>
+    <string name="GSTenabled">GST</string>
+    <string name="GSTdisabled">NO GST</string>
+    <string name="Disc">Discount(%):</string>
+    <string name="PM1">Cash</string>
+    <string name="PM2">Paynow</string>
+    <string name="Shareenabled">SPLIT</string>
+    <string name="Redoenabled">RESET</string>
+    <string name="Sharedisabled">NO SPLIT</string>
+    <string name="Redodisabled">NO RESET</string>
+    <string name="Bill">Total Bill:</string>
+    <string name="IndivPayment">Each Pays:</string>
+
+
+
+
+
+</resources>
