@@ -108,8 +108,9 @@
         android:text="" />
 
     <RadioGroup
+        android:id="@+id/PaymentMethod"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -131,6 +132,20 @@
                 android:text="@string/PM2" />
         </LinearLayout>
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/payNowPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Number" />
+
+    <EditText
+        android:id="@+id/payNowPhoneNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
