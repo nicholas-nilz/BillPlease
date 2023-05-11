@@ -133,44 +133,26 @@
         </LinearLayout>
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/payNowPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/Number" />
-
-    <EditText
-        android:id="@+id/payNowPhoneNum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone"
-        android:text="" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ToggleButton
+        <Button
             android:id="@+id/splitBill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/Sharedisabled"
-            android:textOn="@string/Shareenabled"/>
+            android:text="@string/Share" />
 
-        <ToggleButton
+        <Button
             android:id="@+id/resetBill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:checked="true"
-            android:text="ToggleButton"
-            android:textOff="@string/Redodisabled"
-            android:textOn="@string/Redoenabled"/>
+            android:text="@string/Redo" />
+
     </LinearLayout>
 
     <TextView

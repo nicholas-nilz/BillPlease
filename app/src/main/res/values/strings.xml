@@ -13,13 +13,10 @@
     <string name="Disc">Discount(%):</string>
     <string name="PM1">Cash</string>
     <string name="PM2">Paynow</string>
-    <string name="Shareenabled">SPLIT</string>
-    <string name="Redoenabled">RESET</string>
-    <string name="Sharedisabled">NO SPLIT</string>
-    <string name="Redodisabled">NO RESET</string>
+    <string name="Share">SPLIT</string>
+    <string name="Redo">RESET</string>
     <string name="Bill">Total Bill:</string>
     <string name="IndivPayment">Each Pays:</string>
-    <string name="Number">Paynow Phone No:</string>
 
 
 

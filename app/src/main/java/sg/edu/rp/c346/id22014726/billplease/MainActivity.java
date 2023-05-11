@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Notification;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -24,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton gstApplicable;
     TextView discountDisplay;
     EditText editDiscountDisplay;
-    ToggleButton splitAmount;
-    ToggleButton resetPage;
+    Button splitAmount;
+    Button resetPage;
     TextView totalAmt;
     TextView individualAmt;
     RadioGroup paymentMethod;
-    EditText payNowNum;
     RadioButton payNow;
+    RadioButton cash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         totalAmt = findViewById(R.id.TotalBill);
         individualAmt = findViewById(R.id.Individual);
         paymentMethod = findViewById(R.id.PaymentMethod);
-        payNowNum = findViewById(R.id.payNowPhoneNum);
         payNow = findViewById(R.id.PaymentMethod2);
+        cash = findViewById(R.id.PaymentMethod1);
 
         splitAmount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,15 +71,19 @@ public class MainActivity extends AppCompatActivity {
                     if (editDiscountDisplay.getText().toString().trim().length() != 0) {
                         double discountPercentage = Double.parseDouble(editDiscountDisplay.getText().toString());
                         double discountAmount = newTotal * (discountPercentage / 100);
-                        newTotal = newTotal - discountAmount;
                     }
+
+                    String noOfPaxString = editNoOfPaxDisplay.getText().toString();
+                    int numberOfPax = Integer.parseInt(noOfPaxString);
+
+                    double eachPays = newTotal / numberOfPax;
 
                     totalAmt.setText("Total Bill: $" + String.format("%.2f", newTotal));
                     int totalPax = Integer.parseInt(editNoOfPaxDisplay.getText().toString());
-                    if (totalPax > 1)
-                        individualAmt.setText("Each Pays: $" + String.format("%.2f", newTotal));
+                    if (totalPax != 1)
+                        totalAmt.setText("Each Pays: $" + String.format("%.2f", eachPays));
                 } else {
-                    individualAmt.setText("Each Pays: $" + newTotal);
+                    totalAmt.setText("Each Pays: $" + newTotal);
                 }
                 int checkedRadioId = paymentMethod.getCheckedRadioButtonId();
                 String method;
@@ -90,18 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 totalAmt.setText(method);
             }
         });
-                    payNowNum.setVisibility(View.GONE);
-
-                    payNow.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                        @Override
-                        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                            if (isChecked) {
-                                payNowNum.setVisibility(View.VISIBLE);
-                            } else {
-                                payNowNum.setVisibility(View.GONE);
-                            }
-                        }
-                    });
                     resetPage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -110,6 +103,11 @@ public class MainActivity extends AppCompatActivity {
                             serviceChargeApplicable.setChecked(false);
                             gstApplicable.setChecked(false);
                             editDiscountDisplay.setText("");
+                            cash.setChecked(false);
+                            payNow.setChecked(false);
+
+
+
 
                         }
                     });
